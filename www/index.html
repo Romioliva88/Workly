@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com;">
+  <meta name="theme-color" content="#0b1024">
+  <title>Workly</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <main class="app">
+    <span id="userEmail" hidden aria-hidden="true"></span>
+    <section id="welcome" class="screen welcome" aria-label="Bienvenida">
+      <div class="brand"><span class="star">✦</span> WORKLY</div>
+      <div class="mascot-wrap"><div class="glow"></div><img class="mascot" src="img/wily.png" alt="Wily, asistente virtual de Workly"></div>
+      <div class="intro"><p class="eyebrow">TU ESPACIO DE TRABAJO</p><h1>Trabajemos<br><span>mejor juntos.</span></h1><p class="description">Organiza tus reuniones, conecta con tu equipo y descubre un espacio de trabajo más inteligente.</p><button id="startButton" class="primary" type="button">Comenzar <span aria-hidden="true">→</span></button></div>
+      <p class="footer">WORKLY · TU ASISTENTE INTELIGENTE</p>
+    </section>
+    <section id="login" class="screen login hidden" aria-label="Iniciar sesión">
+      <div class="brand"><span class="star">✦</span> WORKLY</div>
+      <img class="login-mascot" src="img/wily.png" alt="Wily">
+      <h2>¡Bienvenido!</h2><p class="subtext">Ingresa para continuar.</p>
+      <form id="loginForm"><label for="email">Correo electrónico</label><input id="email" type="email" autocomplete="email" placeholder="correo@empresa.cl" required><label for="password">Contraseña</label><input id="password" type="password" autocomplete="current-password" placeholder="Tu contraseña" required><button class="primary" type="submit">Iniciar sesión</button></form>
+      <p id="loginMessage" class="message" role="status" aria-live="polite"></p>
+      <button id="registerButton" class="text-button" type="button">¿No tienes cuenta? Crear usuario</button>
+      <button id="forgotButton" class="text-button" type="button">Olvidé mi contraseña</button>
+      <button id="backButton" class="text-button" type="button">← Volver</button>
+    </section>
+    <section id="register" class="screen login hidden" aria-label="Crear cuenta">
+      <div class="brand"><span class="star">✦</span> WORKLY</div>
+      <img class="login-mascot" src="img/wily.png" alt="Wily">
+      <h2>Crea tu cuenta</h2><p class="subtext">Comienza a trabajar con Workly.</p>
+      <form id="registerForm"><label for="registerEmail">Correo electrónico</label><input id="registerEmail" type="email" autocomplete="email" required placeholder="correo@empresa.cl"><label for="registerPassword">Contraseña (mínimo 6 caracteres)</label><input id="registerPassword" type="password" autocomplete="new-password" minlength="6" required><label for="confirmPassword">Confirmar contraseña</label><input id="confirmPassword" type="password" autocomplete="new-password" minlength="6" required><button class="primary" type="submit">Crear cuenta</button></form>
+      <p id="registerMessage" class="message" role="status" aria-live="polite"></p>
+      <button id="registerBackButton" class="text-button" type="button">← Ya tengo una cuenta</button>
+    </section>
+    <section id="home" class="screen dashboard hidden" aria-label="Panel principal Workly">
+      <header class="dash-head"><div class="brand"><span class="star">✦</span> WORKLY</div><span class="version">ESPACIO DE TRABAJO</span></header>
+      <div class="dash-content new-dashboard v46-home">
+        <div class="v46-top"><div><span class="v46-online">● SISTEMA CONECTADO</span><p class="v46-kicker">TU CENTRO DE TRABAJO</p><h1>Hola, <span>¡vamos a crear!</span></h1><p class="v46-sub">Todo tu equipo, en un solo lugar.</p></div><img src="img/wily.png" alt="Wily, tu asistente" class="v46-wily"></div>
+        <div class="v46-stats"><div><span>01</span><small>Espacio de trabajo</small></div><div><span>06</span><small>Herramientas</small></div><div><span>24/7</span><small>Acceso a Workly</small></div></div>
+        <div class="v46-section"><div><p class="v46-kicker">EXPLORA WORKLY</p><h2>¿Qué hacemos hoy?</h2></div><span>↘</span></div>
+        <div class="v46-actions">
+          <button class="v46-tile v46-featured" data-page="messages" type="button"><span class="v46-symbol"><img src="img/3d_messages.png" alt="" aria-hidden="true"></span><span class="v46-tiletext"><strong>Conversaciones</strong><small>Habla con tu equipo en tiempo real</small></span><span class="v46-next">↗</span></button>
+          <button class="v46-tile" data-page="meetings" type="button"><span class="v46-symbol"><img src="img/3d_meetings.png" alt="" aria-hidden="true"></span><span class="v46-tiletext"><strong>Mi agenda</strong><small>Organiza reuniones y actividades</small></span><span class="v46-next">↗</span></button>
+          <button class="v46-tile" data-page="documents" type="button"><span class="v46-symbol"><img src="img/3d_documents.png" alt="" aria-hidden="true"></span><span class="v46-tiletext"><strong>Documentos</strong><small>Guarda y consulta tus notas</small></span><span class="v46-next">↗</span></button>
+          <button class="v46-tile" data-page="email" type="button"><span class="v46-symbol"><img src="img/3d_email.png" alt="" aria-hidden="true"></span><span class="v46-tiletext"><strong>Correo</strong><small>Comunícate por correo electrónico</small></span><span class="v46-next">↗</span></button>
+          <button class="v46-tile" data-page="sensors" type="button"><span class="v46-symbol"><img src="img/3d_sensors.png" alt="" aria-hidden="true"></span><span class="v46-tiletext"><strong>Laboratorio de sensores</strong><small>Simulaciones e historial ambiental</small></span><span class="v46-next">↗</span></button>
+          <button class="v46-tile" data-page="analytics" type="button"><span class="v46-symbol"><img src="img/3d_analytics.png" alt="" aria-hidden="true"></span><span class="v46-tiletext"><strong>Estadísticas</strong><small>Explora los indicadores de uso</small></span><span class="v46-next">↗</span></button>
+        </div>
+        <div class="v46-footnote">✦ WILY · TU ASISTENTE INTELIGENTE</div>
+      </div>
+      <nav class="bottom-nav" aria-label="Navegación principal">
+        <button data-page="home" class="nav-button active"><span>⌂</span>Inicio</button><button data-page="messages" class="nav-button"><span>☏</span>Mensajes</button><button data-page="sensors" class="nav-button"><span>◉</span>Sensores</button><button data-page="profile" class="nav-button"><span>♙</span>Perfil</button>
+      </nav>
+    </section>
+    <section id="workspace" class="screen dashboard hidden" aria-label="Herramienta Workly">
+      <header class="dash-head"><div class="brand"><span class="star">✦</span> WORKLY</div><span class="version">MI ESPACIO</span></header>
+      <div class="dash-content workspace-content">
+        <button id="returnHome" class="back-link" type="button">← Volver al inicio</button>
+        <div class="module-banner"><div class="module-icon" id="moduleIcon">✦</div><div class="module-banner-copy"><p class="overline">WORKLY / HERRAMIENTAS</p><h2 id="moduleTitle">Herramienta</h2><p id="moduleDescription" class="module-description"></p></div></div>
+        <div id="moduleContent" class="module-card"></div>
+      </div>
+      <nav class="bottom-nav" aria-label="Navegación principal">
+        <button data-page="home" class="nav-button"><span>⌂</span>Inicio</button><button data-page="messages" class="nav-button"><span>☏</span>Mensajes</button><button data-page="sensors" class="nav-button"><span>◉</span>Sensores</button><button data-page="profile" class="nav-button"><span>♙</span>Perfil</button>
+      </nav>
+    </section>
+  </main>
+  <script src="cordova.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
